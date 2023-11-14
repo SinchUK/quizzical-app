@@ -1,0 +1,36 @@
+.main_content h3 {
+    color: #293264;
+    font-family: Karla;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.main_content_form {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+.main_content_answers span {
+    padding: 4px 9px;
+    border-radius: 7.942px;
+    border: 0.794px solid #4d5b9e;
+    color: #293264;
+    font-family: Inter;
+    font-size: 10.24px;
+    font-weight: 500;
+}
+
+.main_content hr {
+    margin-top: 14px;
+    margin: 14px 0px;
+}
+
+.main_content_answers .checked {
+    background: #d6dbf5;
+    border: none;
+}
+
+.main_content_answers__item input {
+    display: none;
+}

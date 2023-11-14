@@ -13,6 +13,19 @@
 }
 
 .App {
-    width: 550px;
-    height: 550px;
+    width: 600px;
+    height: 600px;
+    background-color: #f5f7fb;
+}
+
+.figure_ellipse {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.figure_ellipse2 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }

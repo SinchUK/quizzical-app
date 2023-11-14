@@ -6,7 +6,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f5f7fb;
     padding: 40px 75px 25px;
 }
 
@@ -45,19 +44,4 @@
     border-radius: 15px;
     background: #4d5b9e;
     border: none;
-}
-
-.title_figure_ellipse,
-.title_figure_ellipse2 {
-    position: absolute;
-}
-
-.title_figure_ellipse {
-    top: 0px;
-    right: 0px;
-}
-
-.title_figure_ellipse2 {
-    bottom: 0px;
-    left: 0px;
 }
