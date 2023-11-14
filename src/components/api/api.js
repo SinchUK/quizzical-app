@@ -13,7 +13,11 @@ const transformQuestions = (arr) => {
                 .replace(/&quot;/gi, '"')
                 .replace(/&rdquo;/gi, '"')
                 .replace(/&rsquo;/gi, '"')
-                .replace(/&#039;/gi, "'");
+                .replace(/&#039;/gi, "'")
+                .replace(/&Delta;/gi, "Δ")
+                .replace(/&Sigma;/gi, "Σ")
+                .replace(/&Uuml;/gi, "Ü")
+                .replace(/&amp;/gi, "&");
         };
         const answersArr = [...item.incorrect_answers, item.correct_answer];
         const newAnswers = answersArr.map((elem) => {
@@ -28,6 +32,7 @@ const transformQuestions = (arr) => {
             answers: newAnswers,
         };
     });
+    console.log(answers, "answers in Api");
     return answers;
 };
 

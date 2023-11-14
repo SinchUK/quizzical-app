@@ -5,7 +5,7 @@
     font-weight: 700;
     margin-bottom: 12px;
 }
-.main_content_form {
+.main_content_answers {
     display: flex;
     flex-direction: row;
     gap: 7px;

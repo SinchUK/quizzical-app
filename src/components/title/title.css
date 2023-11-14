@@ -24,7 +24,7 @@
 }
 
 .title p,
-.title button {
+.title_content a {
     font-family: "Inter";
 }
 
@@ -35,7 +35,12 @@
     margin-bottom: 20px;
 }
 
-.title button {
+.title_content a {
+    text-decoration: none;
+    font-family: "Inter";
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 193px;
     height: 52px;
     color: #f5f7fb;

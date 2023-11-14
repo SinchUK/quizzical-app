@@ -1,4 +1,5 @@
 import { figure, figure2 } from "../../assets";
+import { Link } from "react-router-dom";
 
 import "./title.css";
 
@@ -9,7 +10,10 @@ const Title = () => {
             <div className="title_content">
                 <h1>Quizzical</h1>
                 <p>Some description if needed</p>
-                <button>Start quiz</button>
+                <Link className="title_content_start-link" to="/main">
+                    Start quiz
+                </Link>
+                {/* <button onClick={}>Start quiz</button> */}
             </div>
             <img className="title_figure_ellipse2" src={figure2} alt="" />
         </div>

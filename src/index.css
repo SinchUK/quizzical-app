@@ -18,13 +18,13 @@
     background-color: #f5f7fb;
 }
 
-.figure_ellipse {
+.title_figure_ellipse {
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
-.figure_ellipse2 {
+.title_figure_ellipse2 {
     position: absolute;
     bottom: 0px;
     left: 0px;
