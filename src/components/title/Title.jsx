@@ -13,7 +13,6 @@ const Title = () => {
                 <Link className="title_content_start-link" to="/main">
                     Start quiz
                 </Link>
-                {/* <button onClick={}>Start quiz</button> */}
             </div>
             <img className="title_figure_ellipse2" src={figure2} alt="" />
         </div>

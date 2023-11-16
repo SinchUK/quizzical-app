@@ -1,3 +1,5 @@
+import { decode } from "html-entities";
+
 const url = "https://opentdb.com/api.php?amount=5&type=multiple";
 
 const getData = async () => {
@@ -9,18 +11,12 @@ const getData = async () => {
 const transformQuestions = (arr) => {
     const answers = arr.map((item) => {
         const transformText = (text) => {
-            return text
-                .replace(/&quot;/gi, '"')
-                .replace(/&rdquo;/gi, '"')
-                .replace(/&rsquo;/gi, '"')
-                .replace(/&#039;/gi, "'")
-                .replace(/&Delta;/gi, "Δ")
-                .replace(/&Sigma;/gi, "Σ")
-                .replace(/&Uuml;/gi, "Ü")
-                .replace(/&amp;/gi, "&");
+            return decode(text);
         };
         const answersArr = [...item.incorrect_answers, item.correct_answer];
-        const newAnswers = answersArr.map((elem) => {
+        const sortedArr = answersArr.sort(() => 0.5 - Math.random());
+        console.log(item.correct_answer, " : correct");
+        const newAnswers = sortedArr.map((elem) => {
             return {
                 answer: transformText(elem),
                 isCorrect: elem === item.correct_answer ? true : false,

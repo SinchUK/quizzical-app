@@ -1,25 +1,21 @@
 import { useState } from "react";
 import "./question.css";
 
-const Question = ({ questionItem, register, handleGetAllValues }) => {
+const Question = ({ questionItem }) => {
     const [inputValue, setInputValue] = useState("");
     const { question, answers } = questionItem;
-    const [answer, setAnswer] = useState([]);
 
     const Item = ({ item }) => {
         const checked = inputValue === item.answer ? "checked" : "";
-        // const itemAnswer = item.answer;
         const handleInputChange = (e) => {
             const value = e.target.value;
             console.log(value, "checked");
             setInputValue(value);
-            // handleGetAllValues();
         };
 
         return (
             <label className="main_content_answers__item">
                 <input
-                    // {...register(`${itemAnswer}`)}
                     name={item.question}
                     onChange={(e) => handleInputChange(e)}
                     type="radio"

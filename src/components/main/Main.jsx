@@ -1,23 +1,14 @@
-import { useEffect, useState, CSSProperties } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { ClipLoader } from "react-spinners";
+import { PuffLoader } from "react-spinners";
 import getData from "../api/api";
 import Question from "../question/Question";
-
-// import { useForm } from "react-hook-form";
 
 import { figure3, figure4 } from "../../assets";
 import "./main.css";
 
-const override: CSSProperties = {
-    display: "block",
-    margin: "0 auto",
-    borderColor: "red",
-};
-
 const Main = () => {
     const [loading, setLoading] = useState(true);
-    // const { register, handleSubmit, getValues } = useForm();
     const [questions, setQuestions] = useState([]);
 
     const getQuestions = async () => {
@@ -37,21 +28,9 @@ const Main = () => {
         console.log("submit");
     };
 
-    // const handleGetAllValues = () => {
-    //     // Get all form values
-    //     const allFormValues = getValues();
-    //     console.log("All form values:", allFormValues);
-    // };
     const View = ({ questions }) => {
         return questions.map((item) => {
-            return (
-                <Question
-                    //   handleGetAllValues={handleGetAllValues}
-                    key={uuidv4()}
-                    questionItem={item}
-                    //   register={register}
-                />
-            );
+            return <Question key={uuidv4()} questionItem={item} />;
         });
     };
 
@@ -64,13 +43,17 @@ const Main = () => {
             >
                 <div className="main_content">
                     {!loading ? (
-                        <View questions={questions} />
+                        <>
+                            <View questions={questions} />
+                            <button className="main_content_btn">
+                                Check answers
+                            </button>
+                        </>
                     ) : (
                         <div className="spinner_block">
-                            <ClipLoader />
+                            <PuffLoader color="rgba(54, 215, 183, 1)" />
                         </div>
                     )}
-                    <button className="main_content_btn">Check answers</button>
                 </div>
             </form>
             <img className="title_figure_ellipse2" src={figure4} alt="" />
