@@ -7,7 +7,7 @@ const getData = async () => {
     // const response = await fetch(url);
     // const data = await response.json();
     const data = (await axios.get(url)).data.results;
-    console.log(data, "data api");
+    // console.log(data, "data api");
     return transformQuestions(data);
 };
 
@@ -18,7 +18,7 @@ const transformQuestions = (arr) => {
         };
         const answersArr = [...item.incorrect_answers, item.correct_answer];
         const sortedArr = answersArr.sort(() => 0.5 - Math.random());
-        console.log(item.correct_answer, " : correct");
+        // console.log(item.correct_answer, " : correct");
         const newAnswers = sortedArr.map((elem) => {
             return {
                 answer: transformText(elem),
@@ -31,7 +31,7 @@ const transformQuestions = (arr) => {
             answers: newAnswers,
         };
     });
-    console.log(answers, "answers in Api");
+    // console.log(answers, "answers in Api");
     return answers;
 };
 

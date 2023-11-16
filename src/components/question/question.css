@@ -11,7 +11,7 @@
     gap: 7px;
     flex-wrap: wrap;
 }
-.main_content_answers span {
+.checkmark {
     padding: 4px 9px;
     border-radius: 7.942px;
     border: 0.794px solid #4d5b9e;
@@ -19,6 +19,14 @@
     font-family: Inter;
     font-size: 10.24px;
     font-weight: 500;
+}
+
+.checkmark_true {
+    background-color: rgb(122 223 122);
+}
+
+.checkmark_false {
+    background-color: rgb(248 114 114);
 }
 
 .main_content hr {
@@ -33,4 +41,8 @@
 
 .main_content_answers__item input {
     display: none;
+}
+
+.main_content_answers__item {
+    cursor: pointer;
 }

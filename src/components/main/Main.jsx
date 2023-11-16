@@ -11,6 +11,14 @@ const Main = () => {
     const [loading, setLoading] = useState(true);
     const [questions, setQuestions] = useState([]);
 
+    const [userAnswers, setUserAnswers] = useState(Array(5).fill(null));
+    const [correctAnswers, setCorrectAnswers] = useState(Array(5).fill(null));
+
+    const [isChecking, setIsChecking] = useState(false);
+
+    console.log(correctAnswers, "correct answers");
+    console.log(userAnswers, "user answers");
+
     const getQuestions = async () => {
         const data = await getData();
         console.log(data, "data getQuest");
@@ -19,18 +27,60 @@ const Main = () => {
     };
 
     useEffect(() => {
-        // setLoading(true);
+        getCorrectAnswers();
+    }, [questions]);
+
+    const getCorrectAnswers = () => {
+        const answers = questions.map((question) => {
+            const correctAnswer = question.answers.find(
+                (answ) => answ.isCorrect
+            );
+            return correctAnswer.answer;
+        });
+        setCorrectAnswers(answers);
+    };
+
+    useEffect(() => {
         getQuestions();
     }, []);
 
-    const onSubmitForm = (e) => {
-        e.preventDefault();
-        console.log("submit");
+    const checkScore = () => {
+        let score = 0;
+        const answers = userAnswers.map((answ) => {
+            const trueAnswers = correctAnswers.map((corrAsw) => {
+                return answ === corrAsw ? score++ : score;
+            });
+            return trueAnswers;
+        });
+        return score;
     };
 
-    const View = ({ questions }) => {
-        return questions.map((item) => {
-            return <Question key={uuidv4()} questionItem={item} />;
+    const onSubmitForm = (e) => {
+        e.preventDefault();
+        if (isChecking) {
+            setIsChecking(false);
+            setCorrectAnswers(Array(5).fill(null));
+            setUserAnswers(Array(5).fill(null));
+            getQuestions();
+        } else {
+            setIsChecking(true);
+            // if (userAnswers.some((answ) => answ === null)) return;
+        }
+    };
+
+    const QuestionRender = ({ questions }) => {
+        return questions.map((item, index) => {
+            return (
+                <Question
+                    correctAnswers={correctAnswers}
+                    isChecking={isChecking}
+                    questionInd={index}
+                    key={uuidv4()}
+                    questionItem={item}
+                    userAnswers={userAnswers}
+                    setUserAnswers={setUserAnswers}
+                />
+            );
         });
     };
 
@@ -44,10 +94,26 @@ const Main = () => {
                 <div className="main_content">
                     {!loading ? (
                         <>
-                            <View questions={questions} />
-                            <button className="main_content_btn">
-                                Check answers
-                            </button>
+                            <QuestionRender questions={questions} />
+                            <div className="main_content_check-block">
+                                {isChecking ? (
+                                    <span>
+                                        You scored {checkScore()}/5 correct
+                                        answers
+                                    </span>
+                                ) : (
+                                    ""
+                                )}
+
+                                <button
+                                    className="main_content_btn"
+                                    disabled={userAnswers.some(
+                                        (answ) => answ === null
+                                    )}
+                                >
+                                    {isChecking ? "New game" : "Check answers"}
+                                </button>
+                            </div>
                         </>
                     ) : (
                         <div className="spinner_block">
