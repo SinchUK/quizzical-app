@@ -1,11 +1,14 @@
 import { decode } from "html-entities";
+import axios from "axios";
 
 const url = "https://opentdb.com/api.php?amount=5&type=multiple";
 
 const getData = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return transformQuestions(data.results);
+    // const response = await fetch(url);
+    // const data = await response.json();
+    const data = (await axios.get(url)).data.results;
+    console.log(data, "data api");
+    return transformQuestions(data);
 };
 
 const transformQuestions = (arr) => {
