@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/SinchUK/quizzical-app/static/css/main.ca79a16e.css",
+    "main.js": "/SinchUK/quizzical-app/static/js/main.08a6f853.js",
+    "static/js/845.9afcc49f.chunk.js": "/SinchUK/quizzical-app/static/js/845.9afcc49f.chunk.js",
+    "static/media/bravo.mp3": "/SinchUK/quizzical-app/static/media/bravo.f23ccc6b701795e1ff14.mp3",
+    "static/media/select_answer.mp3": "/SinchUK/quizzical-app/static/media/select_answer.87c75fd254abcaec9e2b.mp3",
+    "index.html": "/SinchUK/quizzical-app/index.html",
+    "static/media/figure2.svg": "/SinchUK/quizzical-app/static/media/figure2.aa8e766f9caec0c17bc2897632e01539.svg",
+    "static/media/figure.svg": "/SinchUK/quizzical-app/static/media/figure.ba7d695caf1ef401938b448df004d2f0.svg",
+    "static/media/figure4.svg": "/SinchUK/quizzical-app/static/media/figure4.501f375e7acdde319fca05a3a0f8d107.svg",
+    "static/media/figure3.svg": "/SinchUK/quizzical-app/static/media/figure3.527cb986dd510e45a678de8a5e77f43a.svg",
+    "main.ca79a16e.css.map": "/SinchUK/quizzical-app/static/css/main.ca79a16e.css.map",
+    "main.08a6f853.js.map": "/SinchUK/quizzical-app/static/js/main.08a6f853.js.map",
+    "845.9afcc49f.chunk.js.map": "/SinchUK/quizzical-app/static/js/845.9afcc49f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca79a16e.css",
+    "static/js/main.08a6f853.js"
+  ]
+}
