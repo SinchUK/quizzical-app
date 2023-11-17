@@ -50,3 +50,15 @@
     background: #4d5b9e;
     border: none;
 }
+
+.title_contnet_select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #4d5b9e;
+    color: #4d5b9e;
+}
+
+/* .title_contnet_select:checked {
+    border: none;
+    
+} */

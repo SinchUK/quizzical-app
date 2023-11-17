@@ -17,6 +17,11 @@
     cursor: pointer;
 }
 
+.main_content_btn a {
+    color: white;
+    text-decoration: none;
+}
+
 .spinner_block {
     position: relative;
     width: 100%;

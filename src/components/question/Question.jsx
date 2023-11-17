@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { selectSound } from "../../assets/audio";
+import useSound from "use-sound";
+
 import "./question.css";
 
 const Question = ({
@@ -10,17 +12,15 @@ const Question = ({
     isChecking,
 }) => {
     const { question, answers } = questionItem;
-    // const [isCorrect, setIsCorrect] = useState(null);
 
     const Answer = ({ item }) => {
-        console.log(item, "userAnswers in Question");
+        const [play] = useSound(selectSound);
         const checked =
             userAnswers[questionInd] === item.answer ? "checked" : "";
-        // if (item.answer)
 
         const handleInputChange = (e) => {
             const value = e.target.value;
-            // setIsCorrect(value === item.answer);
+
             setUserAnswers((prev) => {
                 const result = [...prev];
                 result[questionInd] = value;
@@ -48,12 +48,14 @@ const Question = ({
         return (
             <label className="main_content_answers__item">
                 <input
+                    onClick={play}
                     name={item.question}
                     onChange={(e) => handleInputChange(e)}
                     type="radio"
                     value={item.answer}
                     checked={userAnswers[questionInd] === item.answer}
                     required
+                    disabled={isChecking}
                 />
                 <span className={answerStyling()}>{item.answer}</span>
             </label>
