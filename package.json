@@ -1,7 +1,7 @@
 {
     "name": "question-quizz",
     "version": "0.1.0",
-    "homepage": "sinchuk.github.io/quizzical-app/",
+    "homepage": "https://github.io/quizzical-app/",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.17.0",
