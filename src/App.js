@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Main from "./components/main/Main";
 import Title from "./components/title/Title";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     const [categoryNumber, setCategoryNumber] = useState(0);
     const [difficult, setDifficult] = useState("Any Difficulty");
     const [questions, setQuestions] = useState([]);
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App">
                 <Routes>
                     <Route
@@ -33,7 +33,7 @@ function App() {
                     />
                 </Routes>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
